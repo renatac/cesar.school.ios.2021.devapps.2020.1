@@ -88,7 +88,7 @@ class ConsolesTableViewController: UITableViewController {
     
     
     @IBAction func addConsole(_ sender: Any) {
-        
+        print("addConsole")
     }
     
 } // fim da classe

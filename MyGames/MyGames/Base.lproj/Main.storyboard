@@ -131,6 +131,9 @@
                                 <state key="normal" title="SALVAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEditGame:" destination="3L9-bj-8cU" eventType="touchUpInside" id="gGd-WR-fmC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YB-gL-jBj">
                                 <rect key="frame" x="25" y="271" width="364" height="18"/>
@@ -141,6 +144,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lI-Xd-Bb5">
                                 <rect key="frame" x="32.5" y="302.5" width="349" height="442"/>
                                 <state key="normal" title="Toque para adicionar a imagem de capa"/>
+                                <connections>
+                                    <action selector="AddEditCover:" destination="3L9-bj-8cU" eventType="touchUpInside" id="2at-nu-OIH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Idf-JJ-zSr"/>
@@ -172,10 +178,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar" largeTitleDisplayMode="never" id="9Yt-w7-37L"/>
+                    <connections>
+                        <outlet property="btAddEdit" destination="4Va-3O-Xpg" id="QlC-XZ-zRD"/>
+                        <outlet property="btCover" destination="9lI-Xd-Bb5" id="Eou-aK-ABh"/>
+                        <outlet property="dpReleaseDate" destination="giL-ND-ECX" id="eF2-YS-RK1"/>
+                        <outlet property="ivCover" destination="LAd-Qv-LnS" id="x4t-8T-DbD"/>
+                        <outlet property="tfConsole" destination="bXT-VM-Mo9" id="wf6-cY-OVN"/>
+                        <outlet property="tfTitle" destination="tZR-MZ-hWy" id="Ahi-27-NSv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvf-UG-apx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3772.4637681159425" y="29.464285714285712"/>
+            <point key="canvasLocation" x="5086" y="-68"/>
         </scene>
         <!--Jogos-->
         <scene sceneID="Sei-QO-cPH">
@@ -308,6 +322,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ivCover" destination="rYE-Bw-6No" id="6RU-6q-Gtm"/>
+                        <outlet property="lbConsole" destination="7sV-WH-kv0" id="b6e-Ef-6tG"/>
+                        <outlet property="lbReleaseDate" destination="3ag-Wf-0vS" id="bXv-hc-fYm"/>
+                        <outlet property="lbTitle" destination="LyC-gI-lmF" id="41V-GN-xAd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="De1-vH-Bpq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,7 +381,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aRT-F4-bMQ"/>
+        <segue reference="5Co-Ng-6pL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="console" width="23" height="23"/>
