@@ -19,6 +19,7 @@
 		EDEAA6592638E5890034E393 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAA6582638E5890034E393 /* GameViewController.swift */; };
 		EDEAA65B2638E6E40034E393 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAA65A2638E6E40034E393 /* GameTableViewCell.swift */; };
 		EDEAA682263A25A00034E393 /* ViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAA681263A25A00034E393 /* ViewController+CoreData.swift */; };
+		EDEAA6A9263B6D820034E393 /* ConsolesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAA6A8263B6D810034E393 /* ConsolesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EDEAA6582638E5890034E393 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EDEAA65A2638E6E40034E393 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		EDEAA681263A25A00034E393 /* ViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreData.swift"; sourceTree = "<group>"; };
+		EDEAA6A8263B6D810034E393 /* ConsolesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				EDEAA6582638E5890034E393 /* GameViewController.swift */,
 				EDEAA65A2638E6E40034E393 /* GameTableViewCell.swift */,
 				EDEAA681263A25A00034E393 /* ViewController+CoreData.swift */,
+				EDEAA6A8263B6D810034E393 /* ConsolesManager.swift */,
 			);
 			path = MyGames;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				EDEAA6572638E56A0034E393 /* ConsolesTableViewController.swift in Sources */,
 				EDEAA682263A25A00034E393 /* ViewController+CoreData.swift in Sources */,
 				EDEAA6552638E4A90034E393 /* GamesTableViewController.swift in Sources */,
+				EDEAA6A9263B6D820034E393 /* ConsolesManager.swift in Sources */,
 				EDCC832626377EF10069A8C6 /* MyGames.xcdatamodeld in Sources */,
 				EDEAA65B2638E6E40034E393 /* GameTableViewCell.swift in Sources */,
 			);

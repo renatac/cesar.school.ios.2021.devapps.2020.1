@@ -12,7 +12,7 @@ import CoreData
 class GamesTableViewController: UITableViewController {
 
     var fetchedResultController: NSFetchedResultsController<Game>!
-
+    
     lazy var label: UILabel = {
         
         let label = UILabel()
@@ -66,6 +66,8 @@ class GamesTableViewController: UITableViewController {
         }
                              
         cell.prepare(with: game)
+        
+        print("cellForRowAt ")
         
         return cell
     }
