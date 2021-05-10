@@ -78,10 +78,18 @@ class AddEditViewController: UIViewController {
     }
     
     @objc func done() {
-        let index = pickerView.selectedRow(inComponent: 0)
-        let console = ConsolesManager.shared.consoles[index]
-        tfConsole.text = console.name
-        cancel()
+        if ConsolesManager.shared.consoles.count != 0 {
+            let index = pickerView.selectedRow(inComponent: 0)
+            if index != -1 {
+                let console = ConsolesManager.shared.consoles[index]
+                tfConsole.text = console.name
+                cancel()
+            }
+        } else {
+            // TODO mostrar error aqui
+            print("TODO mostrar error aqui")
+        }
+        
     }
     
 
