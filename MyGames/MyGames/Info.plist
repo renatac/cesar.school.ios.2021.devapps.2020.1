@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>A app precisa acessar a sua galeria para copiar as fotos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>A app precisa acessar a sua galeria para copiar as fotos.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

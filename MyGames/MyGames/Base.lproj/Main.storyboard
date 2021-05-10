@@ -68,7 +68,7 @@
                                     <outlet property="ivCover" destination="OFC-Ds-pIp" id="CTX-m2-CpE"/>
                                     <outlet property="lbConsole" destination="liC-Wt-Equ" id="5lh-nC-Mcf"/>
                                     <outlet property="lbTitle" destination="p5w-wL-Yfp" id="hCE-Fh-F9Q"/>
-                                    <segue destination="T0M-rz-l6E" kind="show" id="BBJ-Ls-mUL"/>
+                                    <segue destination="T0M-rz-l6E" kind="show" identifier="gameSegue" id="BBJ-Ls-mUL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,7 +80,7 @@
                     <navigationItem key="navigationItem" title="Jogos" id="d8W-AG-ygv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3IQ-Yd-O59">
                             <connections>
-                                <segue destination="3L9-bj-8cU" kind="show" id="5Co-Ng-6pL"/>
+                                <segue destination="3L9-bj-8cU" kind="show" identifier="newGameSegue" id="5Co-Ng-6pL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -288,7 +288,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-Bw-6No">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-Bw-6No">
                                 <rect key="frame" x="18" y="261.5" width="378" height="533.5"/>
                             </imageView>
                         </subviews>

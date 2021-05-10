@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class AddEditViewController: UIViewController {
 
@@ -96,7 +97,69 @@ class AddEditViewController: UIViewController {
     
     @IBAction func AddEditCover(_ sender: UIButton) {
         // para adicionar uma imagem da biblioteca
+        
+        // para adicionar uma imagem da biblioteca
+        print("para adicionar uma imagem da biblioteca")
+        
+        
+        let alert = UIAlertController(title: "Selecinar capa", message: "De onde você quer escolher a capa?", preferredStyle: .actionSheet)
+        
+        let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default, handler: {(action: UIAlertAction) in
+            self.selectPicture(sourceType: .photoLibrary)
+        })
+        alert.addAction(libraryAction)
+        
+        let photosAction = UIAlertAction(title: "Album de fotos", style: .default, handler: {(action: UIAlertAction) in
+            self.selectPicture(sourceType: .savedPhotosAlbum)
+        })
+        alert.addAction(photosAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+        
     }
+    
+    private func chooseImageFromLibrary(sourceType: UIImagePickerController.SourceType) {
+        
+        DispatchQueue.main.async {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = sourceType
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.navigationBar.tintColor = UIColor(named: "main")
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func selectPicture(sourceType: UIImagePickerController.SourceType) {
+        
+        //Photos
+        let photos = PHPhotoLibrary.authorizationStatus()
+        if photos == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({status in
+                if status == .authorized{
+                    
+                    self.chooseImageFromLibrary(sourceType: sourceType)
+                    
+                } else {
+                    
+                    print("unauthorized -- TODO message")
+                }
+            })
+        } else if photos == .authorized {
+            self.chooseImageFromLibrary(sourceType: sourceType)
+        } else if photos == .denied {
+            print("unauthorized -- TODO message")
+            
+            
+            // mostrar ym dialogo para convencer o usuario para dar permissao manualmente
+        }
+    }
+    
     
     @IBAction func addEditGame(_ sender: UIButton) {
         // acao salvar novo ou editar existente
@@ -142,4 +205,34 @@ extension AddEditViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         let console = ConsolesManager.shared.consoles[row]
         return console.name
     }
+} // fim da classe
+
+
+extension AddEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // tip. implementando os 2 protocols o evento sera notificando apos user selecionar a imagem
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            // ImageView won't update with new image
+            // bug fixed: https://stackoverflow.com/questions/42703795/imageview-wont-update-with-new-image
+            DispatchQueue.main.async {
+                self.ivCover.image = pickedImage
+                self.ivCover.setNeedsDisplay()
+                self.btCover.setTitle(nil, for: .normal)
+                self.btCover.setNeedsDisplay()
+            }
+        }
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
 }

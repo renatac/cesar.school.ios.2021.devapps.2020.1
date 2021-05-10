@@ -11,7 +11,7 @@
         <relationship name="console" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Console" inverseName="games" inverseEntity="Console"/>
     </entity>
     <elements>
-        <element name="Game" positionX="-148.9151611328125" positionY="-254.0439147949219" width="128" height="103"/>
         <element name="Console" positionX="116.91015625" positionY="-71.4400634765625" width="128" height="73"/>
+        <element name="Game" positionX="-113.8965454101562" positionY="-179.3243103027344" width="128" height="103"/>
     </elements>
 </model>
