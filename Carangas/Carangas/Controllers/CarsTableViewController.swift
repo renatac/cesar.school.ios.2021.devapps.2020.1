@@ -20,6 +20,7 @@ class CarsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
         REST.loadCars(onComplete: { (cars) in
             
             self.cars = cars
@@ -117,14 +118,21 @@ class CarsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "viewSegue" {
+            
+            let vc = segue.destination as? CarViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            vc?.car = cars[index]
+        }
     }
-    */
+    
 
 }

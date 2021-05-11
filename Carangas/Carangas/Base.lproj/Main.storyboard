@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9eb-2u-Lho">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -47,7 +46,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="FpI-Sy-Esc" kind="show" id="bIR-kt-5uk"/>
+                                    <segue destination="FpI-Sy-Esc" kind="show" identifier="viewSegue" id="bIR-kt-5uk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -252,7 +251,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kKk-qI-2Ya"/>
+        <segue reference="Unn-qu-cRI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="main">
