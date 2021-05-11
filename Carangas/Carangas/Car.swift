@@ -27,3 +27,26 @@ class Car: Codable {
         }
     }
 }
+
+/*
+ Dica do colega Luiz enviado na aula 5 no chat:
+ 
+ Podemos usar um ENUM para representar as chaves do JSON ao
+ invés de precisar manter o mesmo nome.
+ 
+ struct Landmark: Codable {
+     var name: String
+     var foundingYear: Int
+     var location: Coordinate
+     var vantagePoints: [Coordinate]
+     
+     enum CodingKeys: String, CodingKey {
+         case name = "title"
+         case foundingYear = "founding_date"
+         
+         case location
+         case vantagePoints
+     }
+ }
+ 
+ */
