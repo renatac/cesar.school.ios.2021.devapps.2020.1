@@ -68,7 +68,7 @@
 				A1B18D0B1F9C1BDD00313110 /* Assets.xcassets */,
 				A1B18D0D1F9C1BDD00313110 /* LaunchScreen.storyboard */,
 				A1B18D101F9C1BDD00313110 /* Info.plist */,
-				ED3C35A32649FC7000343B92 /* Car.swift */,
+				EDD98ADB264B5A21008DD1A4 /* Models */,
 			);
 			path = Carangas;
 			sourceTree = "<group>";
@@ -82,6 +82,14 @@
 				ED3C35A62649FF3500343B92 /* REST.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EDD98ADB264B5A21008DD1A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED3C35A32649FC7000343B92 /* Car.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

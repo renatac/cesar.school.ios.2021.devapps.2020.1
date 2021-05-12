@@ -28,6 +28,11 @@ class Car: Codable {
     }
 }
 
+// GET: http://fipeapi.appspot.com/api/1/carros/marcas.json
+struct Brand: Codable {
+    let fipe_name: String
+}
+
 /*
  Dica do colega Luiz enviado na aula 5 no chat:
  

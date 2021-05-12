@@ -91,17 +91,31 @@ class CarsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+                
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            
+            let car = cars[indexPath.row]
+            
+            REST.delete(car: car) { success in
+                if success {
+                    // remover da estrutura local antes de atualizar
+                    self.cars.remove(at: indexPath.row)
+                    
+                    DispatchQueue.main.async {
+                        // Delete the row from the data source
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }                    
+                    
+                } else {
+                    // TODO mostrar algo para o usuario
+                }
+            }
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
