@@ -227,7 +227,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="separatorColor" name="second"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="fCM-75-mho">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="fCM-75-mho" customClass="ConsoleTableViewCell" customModule="MyGames" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fCM-75-mho" id="hZf-Yd-KqV">
@@ -249,14 +249,16 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="8OR-rk-VV8" firstAttribute="centerY" secondItem="K0e-aO-aRP" secondAttribute="centerY" id="XuX-bw-7Yi"/>
+                                        <constraint firstItem="K0e-aO-aRP" firstAttribute="centerY" secondItem="hZf-Yd-KqV" secondAttribute="centerY" id="SFJ-bl-p1u"/>
+                                        <constraint firstItem="8OR-rk-VV8" firstAttribute="centerY" secondItem="hZf-Yd-KqV" secondAttribute="centerY" id="gP4-C3-bSv"/>
                                         <constraint firstItem="K0e-aO-aRP" firstAttribute="trailing" secondItem="hZf-Yd-KqV" secondAttribute="trailingMargin" constant="5" id="u45-4g-I1n"/>
                                         <constraint firstItem="8OR-rk-VV8" firstAttribute="leading" secondItem="hZf-Yd-KqV" secondAttribute="leadingMargin" constant="25" id="uLA-AZ-KB4"/>
-                                        <constraint firstItem="K0e-aO-aRP" firstAttribute="centerY" secondItem="hZf-Yd-KqV" secondAttribute="centerY" id="xjD-xg-vmI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hvZ-rV-17R" kind="show" identifier="ConsoleVisualizationSegue" id="J2d-E2-LmH"/>
+                                    <outlet property="ivImage" destination="K0e-aO-aRP" id="4Yz-jl-zuy"/>
+                                    <outlet property="lbConsole" destination="8OR-rk-VV8" id="K0t-FW-84u"/>
+                                    <segue destination="hvZ-rV-17R" kind="show" identifier="consoleVisualizationSegue" id="J2d-E2-LmH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -269,7 +271,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="E06-X9-Nuh">
                             <connections>
                                 <action selector="addConsole:" destination="Cga-Qi-dNa" id="xYZ-Ea-zAs"/>
-                                <segue destination="xYP-Bs-H1b" kind="show" id="hHK-Ck-mPf"/>
+                                <segue destination="xYP-Bs-H1b" kind="show" identifier="newConsole" id="hHK-Ck-mPf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -281,7 +283,7 @@
         <!--Console View Controller-->
         <scene sceneID="C1Q-iL-zDG">
             <objects>
-                <viewController id="hvZ-rV-17R" customClass="ConsoleViewController" sceneMemberID="viewController">
+                <viewController id="hvZ-rV-17R" customClass="ConsoleViewController" customModule="MyGames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Db4-Tn-j1I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,15 +319,19 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ivConsole" destination="icC-ov-mrV" id="dLG-FO-xUi"/>
+                        <outlet property="lbConsole" destination="0B7-ij-k0Q" id="mIp-ha-3Bk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKD-cW-bP5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3619" y="1524"/>
         </scene>
-        <!--View Controller-->
+        <!--Console Add Edit View Controller-->
         <scene sceneID="cjw-3r-ozS">
             <objects>
-                <viewController id="xYP-Bs-H1b" sceneMemberID="viewController">
+                <viewController id="xYP-Bs-H1b" customClass="ConsoleAddEditViewController" customModule="MyGames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXs-Na-RZx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,12 +351,18 @@
                                 <state key="normal" title="SALVAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEditConsole:" destination="xYP-Bs-H1b" eventType="touchUpInside" id="rjm-RK-Qa8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu0-Jd-pCW">
                                 <rect key="frame" x="25" y="461.5" width="364" height="30"/>
                                 <state key="normal" title="Toque para adicionar uma Imagem">
                                     <color key="titleColor" name="second"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEditImage:" destination="xYP-Bs-H1b" eventType="touchUpInside" id="uDL-7m-bi1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZtK-ca-hfW"/>
@@ -372,6 +384,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hod-VM-h1F"/>
+                    <connections>
+                        <outlet property="btAddEdit" destination="27A-ZT-kia" id="g4f-TZ-nZE"/>
+                        <outlet property="btConsole" destination="pu0-Jd-pCW" id="Ryx-89-Y2N"/>
+                        <outlet property="ivConsole" destination="C9U-GA-av4" id="bfm-sl-K5L"/>
+                        <outlet property="tfConsole" destination="vkD-iy-3TF" id="7W3-JR-kuZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTb-Cg-ZCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -499,7 +517,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dqu-Yy-vmT"/>
+        <segue reference="hHK-Ck-mPf"/>
         <segue reference="5Co-Ng-6pL"/>
     </inferredMetricsTieBreakers>
     <resources>
